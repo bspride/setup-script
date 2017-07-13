@@ -20,7 +20,7 @@ fi
 # emacs
 read -p "Install emacs (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-	sudo apt=get install emacs24
+	sudo apt-get install emacs24
 fi
 
 # visual studio code
@@ -28,7 +28,7 @@ read -p "Install VS Code (Y/y)" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 	sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d.vscode.list'
+	sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 	sudo apt-get update
 	sudo apt-get install code
 fi
